@@ -35,7 +35,7 @@ static string RenderPage(string title, string content) => $"""
     </head>
     <body>
         <header>
-            <img src="/img/logo.jpg" alt="Logotipo de NovaHarvest">
+            <img src="/img/logo.png" alt="Logotipo de NovaHarvest">
             <br>
             <span class="brand">NovaHarvest</span>
             <br>
