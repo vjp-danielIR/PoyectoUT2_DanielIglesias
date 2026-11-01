@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    background-color: #263b32;
+    color: white;
+}
+
+header {
+    text-align: center;
+    background-color: #426b50;
+}
+
+nav a {
+    color: white;
+}
+
+header img {
+    width: 70px;
+    height: 70px;
+}
+
+nav {
+    right: 10px;
+}
+
+footer {
+    background-color: #426b50;
+}

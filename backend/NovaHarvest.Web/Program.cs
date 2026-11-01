@@ -13,7 +13,7 @@ app.MapGet("/about", () => Results.Content(RenderPage("Acerca de", """
     <ul>
         <li><strong>Proyecto:</strong> NovaHarvest, aprovechamiento de excedentes agrícolas del Valle del Jerte</li>
         <li><strong>Centro:</strong> IES Valle del Jerte</li>
-        <li><strong>Autor:</strong> Pablo Expósito Palomo</li>
+        <li><strong>Autor:</strong> Daniel Iglesias Ramos</li>
         <li><strong>Versión:</strong> 0.1.0</li>
     </ul>
     """), "text/html"));
@@ -35,8 +35,10 @@ static string RenderPage(string title, string content) => $"""
     </head>
     <body>
         <header>
-            <img src="/img/logo.png" alt="Logotipo de NovaHarvest">
+            <img src="/img/logo.jpg" alt="Logotipo de NovaHarvest">
+            <br>
             <span class="brand">NovaHarvest</span>
+            <br>
             <nav>
                 <a href="/">Inicio</a>
                 <a href="/about">Acerca de</a>
