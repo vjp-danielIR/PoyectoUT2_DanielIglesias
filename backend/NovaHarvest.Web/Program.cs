@@ -1,7 +1,10 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddRazorPages();
 var app = builder.Build();
 
+app.UseRequestLocalization("es-ES");
 app.MapStaticAssets();
+app.MapRazorPages();
 
 app.MapGet("/", () => Results.Content(RenderPage("Inicio", """
     <p>Cada semana, los productores de la cooperativa del Valle del Jerte tienen fruta y verdura que no llegan a venderse.</p>
@@ -35,7 +38,7 @@ static string RenderPage(string title, string content) => $"""
     </head>
     <body>
         <header>
-            <img src="/img/logo.jpg" alt="Logotipo de NovaHarvest">
+            <img src="/img/logo.png" alt="Logotipo de NovaHarvest">
             <br>
             <span class="brand">NovaHarvest</span>
             <br>
