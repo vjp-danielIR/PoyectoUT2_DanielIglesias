@@ -6,20 +6,8 @@ app.UseRequestLocalization("es-ES");
 app.MapStaticAssets();
 app.MapRazorPages();
 
-app.MapGet("/", () => Results.Content(RenderPage("Inicio", """
-    <p>Cada semana, los productores de la cooperativa del Valle del Jerte tienen fruta y verdura que no llegan a venderse.</p>
-    <p>NovaHarvest quiere conectar a esos productores con quienes pueden aprovecharla: residencias, comedores sociales, restaurantes y particulares.</p>
-    <p>Así se facilita el aprovechamiento de excedentes y se evita que alimentos en buen estado acaben desperdiciados.</p>
-    """), "text/html"));
 
-app.MapGet("/about", () => Results.Content(RenderPage("Acerca de", """
-    <ul>
-        <li><strong>Proyecto:</strong> NovaHarvest, aprovechamiento de excedentes agrícolas del Valle del Jerte</li>
-        <li><strong>Centro:</strong> IES Valle del Jerte</li>
-        <li><strong>Autor:</strong> Daniel Iglesias Ramos</li>
-        <li><strong>Versión:</strong> 0.1.0</li>
-    </ul>
-    """), "text/html"));
+
 
 app.MapGet("/status", () => Results.Content(RenderPage("Estado del servidor", $"""
     <p>Fecha y hora del servidor: <strong>{DateTime.Now:dd/MM/yyyy HH:mm:ss}</strong></p>
