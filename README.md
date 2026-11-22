@@ -336,3 +336,33 @@ La nota de cada CE se calcula en tres pasos, con la misma regla para todos.
 - Una comprobación que se basa en algo no visto en clase cuenta como **no superada**.
 - Las comprobaciones se ejecutan con la estructura, los nombres, los puertos y las rutas del enunciado; si no se respetan, la comprobación cuenta como **no superada**.
 - **Autoría**: si el alumno no sabe explicar su código, la calificación del proyecto es **0** (ver *Normas generales*).
+
+
+## Arrancar la web
+ # 1. Con Docker
+  Desde la raiz del proyecto en el terminal escribes `docker compose up -d --build` 
+  `AVISO: Debes tener docker abierto previamente`
+  una vez levantado ve al navegador de preferencia y escribe ´localhost:8080´ para entrar en la web
+  para parar y eliminar los contenedores: ´docker compose down´
+
+  # 2. Sin Docker
+  Desde `backend/NovaHarvest.Web/` en el terminal
+  escribe ´dotnet run´  o ´dotnet watch´
+  deberia darte una dicreccion como ´localhost:***´
+    
+
+    ## 3. Páginas
+
+| URL | Páginas| PageModel |
+|---|---|---|
+| `/` | `Pages/Index.cshtml` | - |
+| `/surplus` | `Pages/Surplus.cshtml` | `Pages/Surplus.cshtml.cs` (`SurplusModel`) |
+| `/about` | `Pages/About.cshtml` | - |
+| `/status` | `Pages/Status.cshtml` | `Pages/Status.cshtml.cs` (`StatusModel`) |
+| `/ticket` | `Pages/Reservations/Ticket.cshtml` | - |
+
+Ficheros especiales de `Pages/`:
+
+- `_ViewImports.cshtml`: guarda las directivas comunes (`@using` y `@namespace`) que se aplican a todas las páginas.
+- `_ViewStart.cshtml`: se ejecuta antes de cada página y le asigna el layout por defecto.
+- `Shared/_Layout.cshtml`: contiene la cabecera, el menú y el pie que comparten todas las páginas, y `@RenderBody()` marca dónde va el contenido de cada una.
