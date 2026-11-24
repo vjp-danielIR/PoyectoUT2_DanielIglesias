@@ -1,32 +1,81 @@
 body {
     margin: 0;
-    background-color: #263b32;
-    color: white;
+    color: black;
+    background-color: darkgray;
 }
 
+.brand {
+    color: rgb(185, 148, 78);
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
 header {
+    padding: 18px;
     text-align: center;
-    background-color: #426b50;
-}
-
-nav a {
+    background-color: rgb(39, 82, 39);
     color: white;
 }
 
 header img {
     width: 70px;
     height: 70px;
+    
 }
 
 nav {
-    right: 10px;
+    margin-top: 14px;
+}
+
+nav a {
+    display: inline-block;
+    margin: 4px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background-color: coral;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: grey;
+    color: black;
+}
+
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 24px;
+    background-color: rgb(218, 211, 211);
+    border-radius: 10px;
+}
+
+.ticket {
+    background-color: rgb(255, 253, 245);
+    border-radius: 12px;
+
+}
+
+.ticket h1 {
+    color: rgb(39, 82, 39);
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 12px;
+}
+
+.ticket p {
+    padding: 10px;
+    background-color: rgb(243, 245, 239);
+    border-radius: 6px;
 }
 
 footer {
-    background-color: #426b50;
+    background-color: rgb(39, 82, 39);
+    color: white;
+    height: 22.3vh;
+    text-align: center;
 }
 
 .urgent {
-    color: #b00020;
+    color: red;
     font-weight: bold;
 }

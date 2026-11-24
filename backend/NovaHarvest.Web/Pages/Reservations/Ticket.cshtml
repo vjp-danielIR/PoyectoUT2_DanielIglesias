@@ -7,18 +7,20 @@
     string pickupPlace = "Cooperativa del Valle del Jerte";
 }
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>NovaHarvest - Justificante de reserva</title>
     <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
+  <main class="ticket">
     <h1>Justificante de reserva</h1>
     <p>Reserva: @reservationCode</p>
     <p>Producto: @product</p>
     <p>Kilos: @kilos</p>
     <p>Recogida: @pickupPlace</p>
     <p>Generado el @DateTime.Now.ToString("dd/MM/yyyy HH:mm")</p>
+</main>
 </body>
 </html>

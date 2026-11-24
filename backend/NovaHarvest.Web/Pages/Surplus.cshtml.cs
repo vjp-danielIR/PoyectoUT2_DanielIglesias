@@ -19,7 +19,7 @@ public class SurplusModel : PageModel
         AvailableKg = 343,
         ReservedKg = 120,
         PricePerKg = 3.20m,
-        Note = "<b>Recoger antes de las 14:00</b>"
+        Note = "Recoger antes de las 14:00"
     };
 
     public DateTime ExpiryDate { get; private set; }
@@ -37,7 +37,7 @@ public class SurplusModel : PageModel
     {
         ExpiryDate = Surplus.HarvestDate.AddDays(ShelfLifeDays);
         DaysLeft = (ExpiryDate - DateTime.Today).Days;
-        SurplusPrice = Surplus.PricePerKg * (1 - SurplusDiscount);
+        SurplusPrice = Surplus.PricePerKg - Surplus.PricePerKg * SurplusDiscount;
         RemainingKg = Surplus.AvailableKg - Surplus.ReservedKg;
         FullBoxes = RemainingKg / BoxKg;
         LooseKg = RemainingKg % BoxKg;
