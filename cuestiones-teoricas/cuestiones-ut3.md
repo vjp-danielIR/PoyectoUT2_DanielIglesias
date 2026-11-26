@@ -4,12 +4,12 @@
  Primero el dotnnet build transforma los cshtml en clases de c# y luego los compila junto  a los de cshtml.cs por que esos ya eran c#  despues razor busca con @page la pagina surplus se renderiza y eso es lo que se muestra en el navegador
 
 2 
-![alt text](/backend/NovaHarvest.Web/wwwroot/img/image.png)
+![Captura de la clase generada](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image.png)
 
 WriteLiteral("<h1>Estado del servidor</h1>\r\n<p>Fecha y hora del servidor: ");
 
 sale del html fijo de Status.cshtml y el write Write(Model.ServerTime.ToString("dd/MM/yyyy HH:mm:ss") sale tambien de status.cshtml 
-![alt text](/backend/NovaHarvest.Web/wwwroot/img/image2.png)
+![Captura de WriteLiteral y Write](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image2.png)
 
 3
 por que con build ya se convierten las clases en c# y se compilan y docker solo coge la salida del dll
@@ -45,13 +45,39 @@ el bloque de @{} puede ser el del titulo  @{ ViewData["Title"] = "Acerca de"; } 
 4. Sintaxis.
 5.  Haz estos dos cambios en Surplus.cshtml (y deshazlos después): escribe @Model.SurplusPrize en lugar de @Model.SurplusPrice, y escribe @Model.Surplus.PricePerKg * 0.7m en alguna línea. Copia lo que ocurre en cada caso (el error de dotnet build o el HTML generado). ¿Por qué el primero no compila y el segundo sí, aunque el resultado esté mal? ¿Cómo se corrige el segundo?
 
-en el primer cambio me sale error ![fallo pregunta 4](image3.png)
+en el primer cambio me sale error ![fallo pregunta 4](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image3.png)
 
-segundo ![fallo pregunta 4](image4.png)
+segundo ![fallo pregunta 4](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image4.png)
 
 ya lo probe por separado no me habia dado cuenta de que no era todo junto basicamente el primero falla porque busca una propiedad que no existe por la z y si no encuentra el dato no puede compilar el segundo sí compila porque PricePerKg sí existe pero al haber un espacio antes del * razor corta ahí la expresión C# y deja * 0.7m como texto plano sin calcular la operación
 
-5. Efectos en el documento. Compara cómo se ve la nota del productor en pantalla y en el código fuente de /surplus. ¿Qué ha hecho Razor y por qué? ¿Qué podría pasar si usaras @Html.Raw y la nota la escribiera un usuario malintencionado? Copia el elemento de los días y el botón en los escenarios A, C y D, y explica por qué a veces el atributo class o disabled no aparece. Para el usuario malintencionado, pon como ejemplo una nota que redirija a otra web con window.location.
+5. Efectos en el documento. Compara cómo se ve la nota del productor en pantalla y en el código fuente de /surplus. ¿Qué ha hecho Razor y por qué? ¿Qué podría pasar si usaras @Html.Raw y la nota la escribiera un usuario malintencionado? Copia el elemento de los días y el botón en los escenarios A, C y D, y explica por qué a veces el atributo class o disabled no aparece. 
+
+<!--Para el usuario malintencionado, pon como ejemplo una nota que redirija a otra web con window.location.-->
+
+Caso A: 
+codigo:
+![pregunta5 prueba A](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image7.png)
+
+Demostracion:
+![pregunta 5 prueba A](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image8.png)
+
+Caso C:
+codigo:
+![pregunta 5 prueba c](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image9.png)
+
+Demostracion:
+![pregunta 5 prueba c](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image10.png)
+
+
+Caso D:
+codigo:
+![Pregunta 5 prueba D](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image11.png)
+
+Demostracion:
+![Pregunta 5 prueba D](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image12.png)
+
+Si el valor es null o false Razor no pone el atributo por eso class solo sale cuando hay urgencia (caso C) y disabled solo cuando esta agotado (caso D)
 
 
 6. Directivas. Haz una tabla con cada directiva o fichero especial de tu proyecto (@page, @page "/ticket", @model, @using, @namespace, @inject, _ViewStart.cshtml y Layout = null) y el comportamiento por defecto que cambia. Quita @namespace de _ViewImports.cshtml: copia el error y explícalo. ¿Por qué /reservations/ticket da 404?
@@ -62,12 +88,12 @@ ya lo probe por separado no me habia dado cuenta de que no era todo junto basica
 
 8. Cultura. Quita UseRequestLocalization("es-ES") (y vuelve a ponerlo al terminar). Copia lo que muestran los precios de /surplus y la fecha de / con Docker y con dotnet run. Explica las diferencias y por qué esa línea las elimina.
 dotnet run:
-![pregunta 8 con dotnet run](image5.png)
+![pregunta 8 con dotnet run](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image5.png)
 
 
 Docker:
-![pregunta 8 con docker](image6.png)
-![pregunta 8 fecha](image7.png)
+![pregunta 8 con docker](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image6.png)
+![pregunta 8 fecha](../backend/NovaHarvest.Web/wwwroot/img/cuestiones-image7.png)
 
 la diferencia esta en que dotnet run coge directamente la region del ordenador es decir que aunque hubieras estado en un pais con el ordenador configurado en la region de la libra hubiera salido asi lo hereda del sistema del equipo con el tiempo pasa lo mismo, aunque no le hice captura
 
