@@ -75,7 +75,7 @@ con docker como va aislado de la maquina al ver un simbolo raro busque y vi que 
 1 que herede una cultura por defecto normalmente ingles de eeuu o 2 lo que ha pasado aqui, que usa por defecto una cultura invariante ¤ que es el simbolo generico de moneda con el tiempo lo pone en el idioma en el que este docker
 
 
-1. Ámbito. Cambia temporalmente el contador de /status por una variable local en un @{ } de la página y recarga varias veces: ¿qué ves y por qué? Con SiteStats, ¿qué ve otro navegador, y qué pasa tras docker compose restart backend? ¿Por qué el layout no puede leer una variable declarada en Status.cshtml, y cómo le llega entonces el título?
+9. Ámbito. Cambia temporalmente el contador de /status por una variable local en un @{ } de la página y recarga varias veces: ¿qué ves y por qué? Con SiteStats, ¿qué ve otro navegador, y qué pasa tras docker compose restart backend? ¿Por qué el layout no puede leer una variable declarada en Status.cshtml, y cómo le llega entonces el título?
 
 
 10. PageModel. ¿Qué has puesto en SurplusModel y qué en Surplus.cshtml, y por qué? Cita un cálculo concreto. Si cargas /surplus tres veces, ¿cuántos objetos SurplusModel se crean y cuánto vive cada uno? ¿Y el contador de SiteStats?

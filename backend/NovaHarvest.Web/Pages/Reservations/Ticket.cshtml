@@ -1,11 +1,10 @@
 @page "/ticket"
+@model NovaHarvest.Web.Pages.Reservations.TicketModel
 @{
     Layout = null;
-    string reservationCode = "RES-0001";
-    string product = "Cereza Picota";
-    int kilos = 20;
-    string pickupPlace = "Cooperativa del Valle del Jerte";
 }
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,13 +13,11 @@
     <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
-  <main class="ticket">
     <h1>Justificante de reserva</h1>
-    <p>Reserva: @reservationCode</p>
-    <p>Producto: @product</p>
-    <p>Kilos: @kilos</p>
-    <p>Recogida: @pickupPlace</p>
-    <p>Generado el @DateTime.Now.ToString("dd/MM/yyyy HH:mm")</p>
-</main>
+    <p>Reserva: @Model.ReservationCode</p>
+    <p>Producto: @Model.Product</p>
+    <p>Kilos: @Model.Kilos</p>
+    <p>Recogida: @Model.PickupPlace</p>
+    <p>Generado el @Model.GeneratedAt.ToString("dd/MM/yyyy HH:mm")</p>
 </body>
 </html>
